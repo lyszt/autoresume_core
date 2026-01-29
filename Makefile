@@ -4,21 +4,28 @@
 #   make view     # build then open PDF (xdg-open on Linux)
 #   make clean    # remove generated files
 
-TEX ?= main.tex
-PDF := $(TEX:.tex=.pdf)
+SRCTEX := main.tex
+PDF := $(SRCTEX:.tex=.pdf)
 
 .PHONY: all build clean view
 all: build
 
 build:
-	@echo "Building $(TEX) -> $(PDF)"
+	@echo "Building $(SRCTEX) -> $(PDF)"
+	@if [ ! -f "$(SRCTEX)" ]; then \
+		echo "Source file '$(SRCTEX)' not found. Please create it or adjust SRCTEX in the Makefile."; \
+		exit 1; \
+	fi
 	@if command -v latexmk >/dev/null 2>&1; then \
 		echo "Using latexmk..."; \
-		latexmk -pdf -interaction=nonstopmode $(TEX); \
-	else \
+		latexmk -pdf -interaction=nonstopmode $(SRCTEX); \
+	elif command -v pdflatex >/dev/null 2>&1; then \
 		echo "latexmk not found, falling back to pdflatex (2 passes)..."; \
-		pdflatex -interaction=nonstopmode $(TEX) || exit 1; \
-		pdflatex -interaction=nonstopmode $(TEX) || exit 1; \
+		pdflatex -interaction=nonstopmode $(SRCTEX) || exit 1; \
+		pdflatex -interaction=nonstopmode $(SRCTEX) || exit 1; \
+	else \
+		echo "Error: neither 'latexmk' nor 'pdflatex' were found in PATH. Please install a TeX distribution (e.g., TeX Live) and try again."; \
+		exit 1; \
 	fi
 
 view: build
