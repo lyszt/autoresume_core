@@ -15,9 +15,18 @@ BLOCKED_SCHEMATICS = {
 def get_repos(username: str) -> dict[int, dict[str, str]]:
     url = f'https://api.github.com/users/{username}/repos?per_page=100'
     github_repos = requests.get(url).json()
-    repos: Dict[int, Dict[str, str]] =\
-        {r['id']: {'name': r['name'], 'desc': r['description'], 'url': r['svn_url'], 'lang': r['language']}
-         for r in github_repos if not r['fork'] and not r['name'] in BLOCKED_REPOS and not r['name'].endswith(tuple(BLOCKED_SCHEMATICS))}
+    repos: Dict[int, Dict[str, str]] = {
+        r["id"]: {
+            "name": r["name"],
+            "desc": r["description"] or "",
+            "url": r["svn_url"],
+            "lang": r["language"] or "",
+        }
+        for r in github_repos
+        if not r["fork"]
+        and r["name"] not in BLOCKED_REPOS
+        and not r["name"].endswith(tuple(BLOCKED_SCHEMATICS))
+    }
 
     return repos
 
