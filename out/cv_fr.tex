@@ -1,0 +1,44 @@
+% !TEX TS-program = luatex
+% Awesome Source CV LaTeX Template (Jinja2)
+% Based on: https://github.com/darwiin/awesome-neue-latex-cv
+% Fields are left open for dynamic customization.
+
+\documentclass[localFont,alternative]{yaac-another-awesome-cv}
+\name{ João Luís }{ Almeida }
+\tagline{ Développeur Full Stack expérimenté en Python, TypeScript, Erlang, Elixir et React }
+\photo{ 4cm }{ Menshots-nobg }
+\socialinfo{
+	\linkedin{ lyszt }
+	\smartphone{  }
+	\email{ contact@lyszt.net }\\
+	\address{ Chapecó, Santa Catarina, Brazil }
+}
+
+\emptySeparator
+\input{section_headline_fr}
+
+\begin{document}
+
+	\makecvheader
+	\makecvfooter
+		{\textsc\today}
+		{\textscC.V.}
+		{\thepage}
+
+	\noindent
+	\begin{minipage}[t]{6.2cm}
+		\input{section_competences_fr}
+		\input{section_langues_fr}
+		\input{section_scolarite_fr}
+		\input{section_references_fr}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{\dimexpr\linewidth - 6.2cm - 1.2em}
+		\setlength{\rightcolumnlength}{\dimexpr\linewidth - 0pt}
+		\input{section_headline_fr}
+		\input{section_experience_short_fr}
+		\input{section_projets_fr}
+		\input{section_voluntary_fr}
+	\end{minipage}
+
+\end{document}

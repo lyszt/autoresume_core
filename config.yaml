@@ -1,0 +1,92 @@
+# CV/Resume config for LaTeX Jinja2 templates.
+# Fill in your data; then run the LaTeX generator (e.g. from main.py or script).
+# Use YAML multi-line (| or >) for long text. LaTeX backslashes: use \\ for \.
+
+# --- Header ---
+name_first: ""
+name_last: ""
+tagline: ""
+photo_size: 4cm
+photo_file: Menshots-nobg   # filename without extension (e.g. Menshots-nobg.png → Menshots-nobg)
+
+# --- Social block ---
+linkedin: ""
+smartphone: ""
+email: ""
+address: ""
+
+# --- Footer (optional; defaults: date = \today, title = name - CV)
+# footer_date: "\\today"
+# footer_title: ""
+
+# --- Headline / summary paragraph (raw LaTeX ok)
+headline_text: ""
+
+# --- Include interests section in the CV
+include_interests: false
+
+# --- Competences (category + text per entry)
+# competence_section_title: "Kompetencer"
+competence_entries: []
+  # - category: "Strukturer"
+  #   text: "Bygnings-design, strukturer og kalkulation, elasticitet og plasticitet i materialer."
+
+# --- Work experience
+# experience_section_title: "Job Erfaring"
+experience_entries: []
+  # - date_from: "Marts 2024"
+  #   date_to: "til nu"
+  #   title: "Bygningsingeniør / IT Manager"
+  #   company: "Rivernile ApS"
+  #   location: "Roskilde - Danmark"
+  #   description: |
+  #     \begin{itemize}
+  #     \item Udarbejdelse af statisk dokumentation til byggeprojekter
+  #     \item Udvikling af \LaTeX{} skabelon system til statisk dokumentation
+  #     \end{itemize}
+  #   tags: "Dokumentation, Statisk beregninger, Byggeri"
+
+# --- Languages (name + level 1–5)
+# languages_section_title: "Sprog"
+language_skills: []
+  # - name: "Fransk"
+  #   level: "5"
+  # - name: "Engelsk"
+  #   level: "5"
+
+# --- IT skills (name + level 1–5)
+# it_section_title: "IT skills"
+it_skills: []
+  # - name: "AutoCAD"
+  #   level: "5"
+  # - name: "Microsoft Office"
+  #   level: "4"
+
+# --- Education
+# education_section_title: "Uddannelse"
+education_entries: []
+  # - period: "2009 - 2011"
+  #   description: "Master of Science, Civil Engineering, Cergy-Pontoise Universitetet / VIA UC Horsens."
+
+# --- Interests (only used if include_interests is true)
+# interests_section_title: "Centres d'intérêts"
+# interests_content: |
+#   \textsc{Développement web:} & HTML5, CSS3 \\
+
+# --- Projects / voluntary activities
+# projects_section_title: "Konferencer / Frivillige aktiviteter"
+project_entries: []
+  # - title: "Repair Cafe Aarhus"
+  #   subtitle: ""
+  #   link_url: "https://www.facebook.com/RepairCafeAarhus/"
+  #   link_text: "Repair Cafe Aarhus"
+  #   description: "Frivillig repairmand (cykler og computer - 5 år) fra 2016."
+  #   tags: "repair, reuse, recycle"
+
+# --- References
+# references_section_title: "Referencer"
+reference_entries: []
+  # - name: "Peter Dybdal Klausen"
+  #   role: "Direktør"
+  #   company: "Panel Trade"
+  #   email: "peter@paneltrade.dk"

@@ -36,6 +36,8 @@
 
 ### Core projects
 
+- [autoresume_core](https://github.com/lyszt/autoresume_core): 
+
 - [capitalisme-automatique_core](https://github.com/lyszt/capitalisme-automatique_core): Sequel to a java society simulator made during a Java class, but in Python
 
 - [clairemont_core](https://github.com/lyszt/clairemont_core): 
@@ -44,7 +46,7 @@
 
 - [french-ship-madame-de-pompadour_core](https://github.com/lyszt/french-ship-madame-de-pompadour_core): Social simulation and story generator that creates sci-fi narratives based on Star Trek. OOP Python/Flask with some data structures, Gemini API, React/Vite/Tailwind frontend.
 
-- [iris-client_core](https://github.com/lyszt/iris-client_core): 
+- [iris-client_core](https://github.com/lyszt/iris-client_core): Terminal User Interface made for the IRIS project manager project.
 
 - [kyrie_core](https://github.com/lyszt/kyrie_core): 
 
@@ -60,7 +62,7 @@
 
 - [talleyrand_core](https://github.com/lyszt/talleyrand_core): .config Linux configuration manager built in C++. 
 
-- [tesserae_core](https://github.com/lyszt/tesserae_core): 
+- [tesserae_core](https://github.com/lyszt/tesserae_core): Cat-based rethought lyszt.github.io with a server for community engagement.
 
 ### Education projects
 

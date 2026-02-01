@@ -1,0 +1,12 @@
+% Section: References (dynamic)
+\sectionTitle{ {{ references_section_title | default('Referencer') }} }{\faQuoteLeft}
+
+\begin{referees}
+{% for ref in reference_entries %}
+  \referee
+		{ {{ ref.name }} }
+		{ {{ ref.role }} }
+		{ {{ ref.company }} }
+		{ {{ ref.email }} }
+{% endfor %}
+\end{referees}

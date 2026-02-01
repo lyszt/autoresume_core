@@ -1,0 +1,8 @@
+% Section: Competences (dynamic)
+\sectionTitle{ {{ competence_section_title | default('Kompetencer') }} }{\faTasks}
+
+\begin{keywords}
+{% for entry in competence_entries %}
+	\keywordsentry{ {{ entry.category }} }{ {{ entry.text }} }
+{% endfor %}
+\end{keywords}

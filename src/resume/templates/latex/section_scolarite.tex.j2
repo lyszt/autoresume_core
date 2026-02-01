@@ -1,0 +1,8 @@
+% Section: Education (dynamic)
+\sectionTitle{ {{ education_section_title | default('Uddannelse') }} }{\faMortarBoard}
+
+\begin{scholarship}
+{% for entry in education_entries %}
+	\scholarshipentry{ {{ entry.period }} }{ {{ entry.description }} }
+{% endfor %}
+\end{scholarship}

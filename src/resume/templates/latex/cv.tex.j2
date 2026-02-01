@@ -1,0 +1,38 @@
+% !TEX TS-program = luatex
+% Awesome Source CV LaTeX Template (Jinja2)
+% Based on: https://github.com/darwiin/awesome-neue-latex-cv
+% Fields are left open for dynamic customization.
+
+\documentclass[localFont,alternative]{yaac-another-awesome-cv}
+\name{ {{ name_first }} }{ {{ name_last }} }
+\tagline{ {{ tagline }} }
+\photo{ {{ photo_size | default('4cm') }} }{ {{ photo_file }} }
+\socialinfo{
+	\linkedin{ {{ linkedin }} }
+	\smartphone{ {{ smartphone }} }
+	\email{ {{ email }} }\\
+	\address{ {{ address }} }
+}
+
+\emptySeparator
+\input{section_headline}
+
+\begin{document}
+
+	\makecvheader
+	\makecvfooter
+		{\textsc{{ footer_date | default('\\today') }}}
+		{\textsc{{ footer_title | default(name_first ~ ' ' ~ name_last ~ ' - CV') }}}
+		{\thepage}
+
+	\input{section_competences}
+	\input{section_experience_short}
+	\input{section_langues}
+	\input{section_scolarite}
+{% if include_interests %}
+	\input{section_interets}
+{% endif %}
+	\input{section_projets}
+	\input{section_references}
+
+\end{document}

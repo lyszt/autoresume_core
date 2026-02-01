@@ -1,0 +1,15 @@
+% Section: Work Experience (dynamic)
+\sectionTitle{ {{ experience_section_title | default('Job Erfaring') }} }{\faSuitcase}
+
+\begin{experiences}
+{% for job in experience_entries %}
+\experience
+{ {{ job.date_from }} }{ {{ job.title }} }{ {{ job.company }} }{ {{ job.location }} }{ {{ job.date_to }} }
+             {
+             {{ job.description }}
+             }{ {{ job.tags }} }
+{% if not loop.last %}
+ \emptySeparator
+{% endif %}
+{% endfor %}
+\end{experiences}

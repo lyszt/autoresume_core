@@ -1,0 +1,20 @@
+% Section: Voluntary activities & other projects (from config.yaml; no tags)
+{% if voluntary_entries %}
+\sectionTitle{ {{ voluntary_section_title | default('Voluntary activities \& other projects') }} }{\faHeart}
+
+\begin{projects}
+{% for entry in voluntary_entries %}
+\begin{minipage}[t]{\dimexpr(\linewidth) - 1.5em}
+{% if entry.get('url') %}
+  \textbf{\textsc{ {{ entry.title }} }} \website{ {{ entry.url }} }{ {{ entry.title }} }\smallskip\\
+{% elif entry.get('link_markup') %}
+  \textbf{\textsc{ {{ entry.title }} }} {{ entry.link_markup }}\smallskip\\
+{% else %}
+  \textbf{\textsc{ {{ entry.title }} }}\smallskip\\
+{% endif %}
+  {{ entry.description | default('') }}
+\end{minipage}
+\\*
+{% endfor %}
+\end{projects}
+{% endif %}

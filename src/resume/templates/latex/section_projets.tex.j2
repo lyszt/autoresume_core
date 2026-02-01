@@ -1,0 +1,12 @@
+% Section: Projects / voluntary activities (dynamic)
+\sectionTitle{ {{ projects_section_title | default('Konferencer / Frivillige aktiviteter') }} }{\faPlus}
+
+\begin{projects}
+{% for proj in project_entries %}
+\project
+{ {{ proj.title }} }{ {{ proj.subtitle | default('') }} }{ {{ proj.link_markup | default('') }} }{ {{ proj.description }} }{ {{ proj.tags | default('') }} }
+{% if not loop.last %}
+
+{% endif %}
+{% endfor %}
+\end{projects}

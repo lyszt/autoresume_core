@@ -55,4 +55,3 @@ class UserData:
                 self.legacy_projects.append(repo)
 
         self.skills = sorted(list(skills_set))
-        logger.info(f"{self.skills, self.core_projects, self.edu_projects, self.legacy_projects}")

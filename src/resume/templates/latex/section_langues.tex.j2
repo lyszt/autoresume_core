@@ -1,0 +1,15 @@
+% Section: Languages and IT skills (dynamic)
+\twocolumnsection
+{\sectionTitle{ {{ languages_section_title | default('Sprog') }} }{\faGlobe}
+\begin{skills}
+{% for lang in language_skills %}
+	\skill{ {{ lang.name }} }{ {{ lang.level }} }
+{% endfor %}
+\end{skills}}
+{\sectionTitle{ {{ it_section_title | default('IT skills') }} }{\faLaptop }
+\begin{skills}
+{% for skill in it_skills %}
+    \skill{ {{ skill.name }} }{ {{ skill.level }} }
+{% endfor %}
+  \end{skills}
+  }
